@@ -1,4 +1,5 @@
-﻿import React, { PureComponent } from 'react'
+﻿import React, { PureComponent } from 'react'
+
 import { Button } from 'antd';
 
 export default class CounterClass extends PureComponent {
@@ -13,10 +14,10 @@ export default class CounterClass extends PureComponent {
   render() {
     console.log('class counter渲染')
     return (
-      <div>
-        <h2>当前计数: {this.state.counter}</h2>
-        <Button type="primary" onClick={e => this.increment()}>+1</Button>
-        <Button type="primary" onClick={e => this.decrement()}>-1</Button>
+      <div className='m-4'>
+        <h2 className='mb-4'>当前计数: {this.state.counter}</h2>
+        <Button type="primary" className='mr-4' onClick={e => this.increment()}>+1</Button>
+        <Button onClick={e => this.decrement()}>-1</Button>
       </div>
     )
   }

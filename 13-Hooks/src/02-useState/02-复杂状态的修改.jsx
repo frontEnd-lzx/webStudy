@@ -1,4 +1,5 @@
-﻿import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
+
 import { Button } from 'antd';
 
 export default function ComplexHookState() {
@@ -21,28 +22,32 @@ export default function ComplexHookState() {
     setStudents(newStudents)
   }
 
+  function onAddFriend(){
+    setFriends([...friends, 'lzx'])
+  }
+
   return (
-    <div>
-      <h2>好友列表:</h2>
-      <ul>
+    <div className='m-10'>
+      <h2 className='font-bold mb-4'>好友列表:</h2>
+      <ul >
         {
           friends.map((item, index) => {
             return <li key={index}>{item}</li>
           })
         }
       </ul>
-      <Button type="primary" onClick={e => setFriends([...friends, 'tom'])}>添加朋友</Button>
+      <Button className='mr-4' type="primary" onClick={() => onAddFriend()}>添加朋友</Button>
       {/* 错误的做法 */}
-      <Button type="primary" onClick={addFriend}>添加朋友</Button>
+      <Button type="primary" onClick={() => addFriend()}>添加朋友</Button>
 
-      <h2>学生列表</h2>
+      <h2 className='font-bold mb-4 mt-4'>学生列表</h2>
       <ul>
         {
           students.map((item, index) => {
             return (
-              <li key={item.id}>
-                <span>名字: {item.name} 年龄: {item.age}</span>
-                <Button type="primary" onClick={e => incrementAgeWithIndex(index)}>age+1</Button>
+              <li key={item.id} className='mb-4'>
+                <span className='mr-4'>名字: {item.name} 年龄: {item.age}</span>
+                <Button type="primary" onClick={() => incrementAgeWithIndex(index)}>age+1</Button>
               </li>
             )
           })
