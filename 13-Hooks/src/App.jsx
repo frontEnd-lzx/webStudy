@@ -1,7 +1,7 @@
 ﻿import React, { useState, createContext } from 'react'
 // import CustomContextShareHook from './11-自定义Hook/02-自定义Hook练习-Context共享'
-// import CounterHook from './03-useEffect/02-useEffect的hook实现title的修改'
-import CounterClass from './01-体验hooks/01-counter-class'
+import CounterHook from '../../05-通信/02-使用context通信-类式组件.jsx'
+// import CounterClass from './01-体验hooks/01-counter-class'
 
 
 // import { Button } from 'antd';
@@ -23,7 +23,7 @@ function App() {
 
       <UserContext.Provider value={{ name: 'TaoLoading', age: 18 }}>
         <TokenContext.Provider value='123456'>
-          <CounterClass />
+          <CounterHook />
         </TokenContext.Provider>
       </UserContext.Provider>
     </div>
