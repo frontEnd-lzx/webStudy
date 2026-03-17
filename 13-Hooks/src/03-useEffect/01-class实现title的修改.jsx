@@ -1,7 +1,10 @@
-﻿import React, { PureComponent } from 'react'
+﻿import React, { PureComponent, Component } from 'react'
+
 import { Button } from 'antd';
 
-export default class ClassCounterTitleChange extends PureComponent {
+// PureComponent 大致对应函数组件里的：React.memo
+
+export default class ClassCounterTitleChange extends Component { 
   constructor(props) {
     super(props)
 
